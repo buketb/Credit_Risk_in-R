@@ -11,6 +11,8 @@ library(mixtools)
 
 mortgage <- read.csv("mortgage.csv")
 
+summary(mortgage)
+
 #initialize some empty vectors to calculate statsitics of default_time:
 Frequency <- numeric()
 Percent <- numeric()
@@ -20,3 +22,40 @@ Cumulative_Percent <- numeric()
 #extrect the unique values of default:
 default_indicator <- unique(mortgage$default_time)
 
+#calculate cumulative frequency and percentage
+
+for (i in 1:2){
+  temp <- subset(mortgage, default_time == default_indicator[i])
+  Frequency[i] <- length(temp$default_time)
+  Percent[i] <- round(Frequency[i] /nrow(mortgage),4)*100
+  if (i == 1){
+    Cumulative_Frequency[i] <- Frequency[i] 
+    Cumulative_PErcentage <- Percent[i]
+    }
+    else{
+      Cumulative_Frequency[i] <- Frequency[i-1] +Frequncy[i]
+      Cumulative_PErcentage <- Percent[i-1] + Percent[i]
+      }
+}
+
+
+#store them in a dataframe and print:
+
+results <- cbind.data.frame(default_indicator, Frequency, Percent, Cumulative_Frequency, Cumulative_Percent)
+colnames(results) <- c("default_indicator", "Frequency", "Percent", "Cumulative_Frequency", "Cumulative_Percent")
+print(results)
+
+
+
+
+
+
+
+
+
+
+
+      
+     
+    
+  
