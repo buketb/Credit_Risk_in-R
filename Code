@@ -169,8 +169,16 @@ pval_wald <- 1 - pchisq(wald$result$chi2[1], df=3)
 
 
 
+#Calibration of probit models:
 
+default_mean <- mean(mortgage$default_time, na.rm=T)
+PD_mean <- mean(probit_model$fitted)
 
+#make a table:
+
+means <- as.data.frame(c(default_mean, PD_mean), row.names = c("default", "fitted pd")
+colnames(means) <- c(mean)
+print(means)
 
 
 
