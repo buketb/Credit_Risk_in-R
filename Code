@@ -154,6 +154,19 @@ dev_probit_null <- probit_model_null$deviance
 
 
 
+#LR and Wald Tests:
+LR <- probit_model$null.deviance - probit_model$deviance
+pval_LR <- dchisq(LR, df= 3)
+
+wald <- wald.test(coef(probit_model),Sigma=vcov(probit_model),Terms = 2:4)
+pval_wald <- 1 - pchisq(wald$result$chi2[1], df=3)
+
+#make table:
+
+#...
+
+
+
 
 
 
