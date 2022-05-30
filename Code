@@ -61,6 +61,21 @@ Joint emprical distributions!
 
 ################
 
+#Data preprocessing
+
+###############
+
+
+install.packages("pROC")
+require(pROC)
+hmeq <- read.csv("hmeq.csv")
+hmeq_omit <- na.omit(hmeq)
+#save the job and reason as factor
+hmeq_omit$JOB <- as.factor(hmeq_omit$JOB)
+hmeq_omit$
+
+
+
 
 
 
