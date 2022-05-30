@@ -84,6 +84,11 @@ hmeq_null <- glm(BAD ~ 1, data = hmeq_omit, family = binomial(link = "logit"))
 hmeq_full <- glm(BAD ~ ., data = hmeq_omit, family = binomial(link = "logit"))
 
 
+step(hmeq_null, scope = list(upper= hmeq_full), direction = "both", test= "Chisq", 
+     data = hmeq_omit, k=2, trace = F)
+#setting k=2 gives AIC
+
+
 
 
 
