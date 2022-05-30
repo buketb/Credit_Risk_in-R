@@ -134,6 +134,22 @@ summary(probit_model)
 
 
 
+# calculate AIC and BIC and 2LogL, to compare the models:
+
+AIC_probit <- probit_model$aic
+AIC_probit_null <- probit_model_null$aic
+
+
+BIC_probit <- BIC(probit_model)
+BIC_probit_null <- BIC(probit_model_null)
+
+#deviance gives 2LogL
+
+dev_probit <- probit_model$deviance
+dev_probit_null <- probit_model_null$deviance
+
+#summary table with values:
+#table <- as.data.frame(matrix(c(AIC..., )))
 
 
 
