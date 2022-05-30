@@ -88,6 +88,26 @@ step(hmeq_null, scope = list(upper= hmeq_full), direction = "both", test= "Chisq
      data = hmeq_omit, k=2, trace = F)
 #setting k=2 gives AIC
 
+# choose the model according to step results:
+# hmeq_final <- 
+
+# take the summary of the model
+#summary(hmeq_final)
+#area under the curve:
+#auc(hmeq_omit$BAD, hmeq_final$fitted.values)
+
+#auc(hmeq_omit$BAD, hmeq_full$fitted.values)
+#auc(hmeq_omit$BAD, hmeq_null$fitted.values)
+
+
+
+#to see the ratios of the estimates
+exp(cbind(-coef(hmeq_full), -confint(hmeq_full)))
+# neeed to transform exponential form and adjust the sign
+
+
+
+
 
 
 
