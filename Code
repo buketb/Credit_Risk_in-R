@@ -72,9 +72,9 @@ hmeq <- read.csv("hmeq.csv")
 install.packages("pROC")
 require(pROC)
 
-hmeq_omit <-na.omit(hqem)
-hmeq_omit$JOB <- as.factor(hmeq_omits$JOB)
-hmeq_omit$REASON <- as.factor(hmeq_omits$REASON)
+hmeq_omit <-na.omit(hmeq)
+hmeq_omit$JOB <- as.factor(hmeq_omit$JOB)
+hmeq_omit$REASON <- as.factor(hmeq_omit$REASON)
 
 
 #use glm and start with intercept-only-model and full-model and use selct to choose the variables
