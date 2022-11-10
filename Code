@@ -77,7 +77,7 @@ hmeq_omit$JOB <- as.factor(hmeq_omit$JOB)
 hmeq_omit$REASON <- as.factor(hmeq_omit$REASON)
 
 
-#use glm and start with intercept-only-model and full-model and use selct to choose the variables
+#use glm and start with intercept-only-model and full-model and use step to choose the variables/model
 
 hmeq_null <- glm(BAD ~ 1, data = hmeq_omit, family = binomial(link = "logit"))
 
